@@ -18,8 +18,13 @@ public class MancalaGame
 			{
 				rulesOfTheGame();
 				beginningOfGame();
-				mancalaBoard();
+//				mancalaBoard();
 			}
+		
+		//Global Methods
+		
+		static String player1;
+		static String player2;
 		
 		public static void rulesOfTheGame()
 		{
@@ -44,14 +49,23 @@ public class MancalaGame
 		
 		public static void beginningOfGame()
 		{
-			Scanner stringInput = new Scanner (System.in);
+			Scanner stringInput1 = new Scanner (System.in);
 			System.out.println();
-		    System.out.println("What is your name?");
+		    System.out.println("What is your name Player 1?");
+		    player1 = stringInput1.next();
+		    
+		    Scanner stringInput2 = new Scanner (System.in);
+		    System.out.println();
+		    System.out.println("What is your name Player 2?");
+		    player2 = stringInput2.next();
+		    
+		    System.out.println();
+		    System.out.println("Hello, " + player1 + " and " + player2 + ". Let's play Mancala!");
 		}
 		
-		public static void mancalaBoard()
-		{
-			
-		}
+//		public static void mancalaBoard()
+//		{
+//			
+//		}
 
 	}
