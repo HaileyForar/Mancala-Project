@@ -7,8 +7,8 @@ public class GameBoard
 				boardDisplay();
 			}
 		
-		static String[][] GameBoard = new String [2] [8];
-		
+//		static String[][] GameBoard = new String [2] [8];
+//		
 		public static void boardDisplay()
 		{
 			//Visual game board
@@ -16,7 +16,7 @@ public class GameBoard
 			System.out.println("-----------------------------------------");
 			System.out.println("|    |    |    |    |    |    |    |    |");
 			System.out.println("|    |    |    |    |    |    |    |    |");
-			System.out.println("-----------------------------------------");
+			System.out.println("|    |-----------------------------|    |");
 			System.out.println("|    |    |    |    |    |    |    |    |");
 			System.out.println("|    |    |    |    |    |    |    |    |");
 			System.out.println("-----------------------------------------");
