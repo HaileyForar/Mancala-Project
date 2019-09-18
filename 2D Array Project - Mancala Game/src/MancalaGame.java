@@ -26,7 +26,22 @@ public class MancalaGame
 		
 		static String player1;
 		static String player2;
-		public static String gameBoard[][] = new String [2] [8];
+		public static int[][] gameBoard = new int [2] [8];
+		
+		static int AB;
+		static int BA;
+		static int B6;
+		static int B5;
+		static int B4;
+		static int B3;
+		static int B2;
+		static int B1;
+		static int A6;
+		static int A5;
+		static int A4;
+		static int A3;
+		static int A2;
+		static int A1;
 		
 		public static void rulesOfTheGame()
 		{
@@ -83,10 +98,50 @@ public class MancalaGame
 			System.out.println("|" + gameBoard[1] [0] + "|" + gameBoard[1] [1] + "|" + gameBoard[1] [2] + "|" + gameBoard[1] [3] + "|" + gameBoard[1] [4] + "|" + gameBoard[1] [5] + "|" + gameBoard[1] [6] + "|" + gameBoard[1] [7] + "|");
 			System.out.println("|    |    |    |    |    |    |    |    |");
 			System.out.println("-----------------------------------------");
+			
+			AB = gameBoard[0] [0] + gameBoard[1] [0];
+			BA = gameBoard[0] [7] + gameBoard[1] [7];
+			
+			B6 = gameBoard[0] [1];
+			B5 = gameBoard[0] [2];
+			B4 = gameBoard[0] [3];
+			B3 = gameBoard[0] [4];
+			B2 = gameBoard[0] [5]; 
+			B1 = gameBoard[0] [6];
+			
+			A6 = gameBoard[1] [1];
+			A5 = gameBoard[1] [2];
+			A4 = gameBoard[1] [3];
+			A3 = gameBoard[1] [4];
+			A2 = gameBoard[1] [5];
+			A1 = gameBoard[1] [6];
+			
 		}
 		
 		public static void beginningOfTheGame()
 		{
+			//In the beginning of the game - the end pockets start with 0 stones, and all the subsequent pockets contain 4
+			
+			AB = 0;
+			BA = 0;
+			
+			B6 = 4;
+			B5 = 4;
+			B4 = 4;
+			B3 = 4;
+			B2 = 4;
+			B1 = 4;
+			
+			A6 = 4;
+			A5 = 4;
+			A4 = 4;
+			A3 = 4;
+			A2 = 4;
+			A1 = 4;
+			
+			System.out.println("Alright, So each of the six pockets on either side contain 4 stones, but the two stores on the ends don't contain any.");
+			System.out.println(player1 + "- type in the coordinates of your first move. Ex. B6 would be the first pocket in the top left corner.");
+			Scanner userInput = new Scanner (System.in);
 			
 		}
 
