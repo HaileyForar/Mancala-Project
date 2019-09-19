@@ -7,10 +7,13 @@ public class MancalaGame
 
 		public static void main(String[] args)
 			{
-//				rulesOfTheGame();
-//				beginningOfGame1();
-//				beginningOfGame2();
+				rulesOfTheGame();
+				beginningOfGame1();
+				beginningOfGame2();
+		        gameVariables();
 		        actualGame();
+		        player1IsGoing();
+		        player2IsGoing();
 			    mancalaBoard();
 			}
 		
@@ -18,6 +21,22 @@ public class MancalaGame
 		static String player1;
 		static String player2;
 		public static int[][] gameBoard = new int [2] [8];
+		static boolean player1IsGoing;
+		static boolean player2IsGoing;
+		static int player1Store;
+		static int player2Store;
+		static int A1;
+		static int A2;
+		static int A3;
+		static int A4;
+		static int A5;
+		static int A6;
+		static int B1;
+		static int B2;
+		static int B3;
+		static int B4;
+		static int B5;
+		static int B6;
 		
 		//Simple explanation of the rules of the game and what the actual game board would look like
 		public static void rulesOfTheGame()
@@ -49,7 +68,7 @@ public class MancalaGame
 		}
 		
 		//Initializing Player 1 and Player 2
-		public static void beginningOfGame()
+		public static void beginningOfGame1()
 		{
 			Scanner stringInput1 = new Scanner (System.in);
 			System.out.println();
@@ -71,23 +90,80 @@ public class MancalaGame
 			//In the beginning of the game - the end pockets start with 0 stones, and all the subsequent pockets contain 4
 
 			System.out.println("Alright, So each of the six pockets on either side contain 4 stones, but the two stores on the ends don't contain any.");
+			
+			gameBoard[0][1] = 4;
+			gameBoard[0][2] = 4;
+			gameBoard[0][3] = 4;
+			gameBoard[0][4] = 4;
+			gameBoard[0][5] = 4;
+			gameBoard[0][6] = 4;
+			gameBoard[1][1] = 4;
+			gameBoard[1][2] = 4;
+			gameBoard[1][3] = 4;
+			gameBoard[1][4] = 4;
+			gameBoard[1][5] = 4;
+			gameBoard[1][6] = 4;
 		}
 		
+		//Variables that serve as the values put into the array
+		public static void gameVariables()
+		{
+		    player1Store = gameBoard[0][7];
+		    player2Store = gameBoard[0][0];
+		    
+		    A1 = gameBoard[0][1];
+		    A2 = gameBoard[0][2];
+		    A3 = gameBoard[0][3];
+		    A4 = gameBoard[0][4];
+		    A5 = gameBoard[0][5];
+		    A6 = gameBoard[0][6];
+		    
+		    B1 = gameBoard[1][1];
+		    B2 = gameBoard[1][2];
+		    B3 = gameBoard[1][3];
+		    B4 = gameBoard[1][4];
+		    B5 = gameBoard[1][5];
+		    B6 = gameBoard[1][6];
+		}
+		
+		//Main body and code for the middle of the game
 		public static void actualGame()
 		{
-			
+			System.out.println("Please just ignore the bottom left and right corners - your store will be in the top left and right corner squares.");
 		}
 		
+		//While loop for when player 1 is taking their turn
+		public static void player1IsGoing()
+		{
+			player1IsGoing = true;
+			
+			while(player1IsGoing)
+				{
+					player2IsGoing = false;
+				}
+		}
+		
+		//While loop for when player 2 is taking their turn
+		public static void player2IsGoing()
+		{
+			player2IsGoing = true;
+			
+			while(player2IsGoing)
+				{
+					player1IsGoing = false;
+				}
+		}
+				
 		//Visual of the Mancala Board
 		public static void mancalaBoard()
 		{
 			System.out.println("-----------------------------------------");
+			System.out.println("|    |    |    |    |    |    |    |    |"); 
+			System.out.println("| " + gameBoard[0] [0] + "  | " + gameBoard[0] [1] + "  | " + gameBoard[0] [2] + "  | " + gameBoard[0] [3] + "  | " + gameBoard[0] [4] + "  | " + gameBoard[0] [5] + "  | " + gameBoard[0] [6] + "  | " + gameBoard[0] [7] + "  | ");
 			System.out.println("|    |    |    |    |    |    |    |    |");
-			System.out.println("|" + gameBoard[0] [0] + "|" + gameBoard[0] [1] + "|" + gameBoard[0] [2] + "|" + gameBoard[0] [3] + "|" + gameBoard[0] [4] + "|" + gameBoard[0] [5] + "|" + gameBoard[0] [6] + "|" + gameBoard[0] [7] + "|");
+			System.out.println("|----------------------------------------");
 			System.out.println("|    |    |    |    |    |    |    |    |");
-			System.out.println("|" + gameBoard[0][0] + "|" + gameBoard[6][6]);
-			System.out.println("|    |    |    |    |    |    |    |    |");
-			System.out.println("|" + gameBoard[1] [0] + "|" + gameBoard[1] [1] + "|" + gameBoard[1] [2] + "|" + gameBoard[1] [3] + "|" + gameBoard[1] [4] + "|" + gameBoard[1] [5] + "|" + gameBoard[1] [6] + "|" + gameBoard[1] [7] + "|");
+			System.out.println("| " + gameBoard[1] [0] + "  | " + gameBoard[1] [1] + "  | " + gameBoard[1] [2] + "  | " + gameBoard[1] [3] + "  | " + gameBoard[1] [4] + "  | " + gameBoard[1] [5] + "  | " + gameBoard[1] [6] + "  | " + gameBoard[1] [7] + "  | ");
 			System.out.println("|    |    |    |    |    |    |    |    |");
 			System.out.println("-----------------------------------------");
 			
