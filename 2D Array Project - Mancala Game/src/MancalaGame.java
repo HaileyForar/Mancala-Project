@@ -10,10 +10,9 @@ public class MancalaGame
 				rulesOfTheGame();
 				beginningOfGame1();
 				beginningOfGame2();
-//		        gameVariables();
 		        disclaimer();
-		        playingTheGame();
-			    mancalaBoard();
+//		        playingTheGame();
+//			    mancalaBoard();
 			}
 		
 		//Global Methods
@@ -123,16 +122,28 @@ public class MancalaGame
 			
 			while(player1IsGoing)
 				{
+					System.out.println(player1 + ", it is your turn");
+					System.out.println("What are the coordinates of the stones that you want to move?");
+					System.out.println("Ex. gameBoard[0][3]");
 					player2IsGoing = false;
 				}
+			
+			player1IsGoing = false;
 			
 		    player2IsGoing = true;
 			
 			while(player2IsGoing)
 				{
+					System.out.println(player2 + ", it is your turn");
+					System.out.println("What are the coordinates of the stones that you want to move?");
+					System.out.println("Ex. gameBoard[1][4]");
 					player1IsGoing = false;
 				}
+			player2IsGoing = false;
+			
 			}
+			
+			gameIsPlaying = false;
 		}
 		
 		//Visual of the Mancala Board
